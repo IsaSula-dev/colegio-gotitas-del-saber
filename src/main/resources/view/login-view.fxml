@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.shape.Circle?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.edu.mmcoffee.colegiogotitas.controller.LoginController">
+   <children>
+      <GridPane alignment="CENTER" prefHeight="400.0" prefWidth="600.0" stylesheets="@../css/login-view.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="193.0" minWidth="7.0" prefWidth="46.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="525.0" minWidth="10.0" prefWidth="517.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="133.0" minWidth="7.0" prefWidth="37.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="126.0" minHeight="0.0" prefHeight="42.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="327.0" minHeight="10.0" prefHeight="321.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="75.0" minHeight="10.0" prefHeight="43.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Pane prefHeight="280.0" prefWidth="487.0" stylesheets="@../css/login-view.css" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <children>
+                  <TextField fx:id="txtFieldEmail" layoutX="244.0" layoutY="85.0" prefHeight="40.0" prefWidth="193.0" styleClass="text-field" stylesheets="@../css/login-view.css" />
+                  <TextField fx:id="txtFieldPass" layoutX="245.0" layoutY="177.0" prefHeight="25.0" prefWidth="185.0" styleClass="text-field" stylesheets="@../css/login-view.css" />
+                  <Label layoutX="244.0" layoutY="57.0" stylesheets="@../css/login-view.css" text="CORREO" />
+                  <Label layoutX="244.0" layoutY="142.0" stylesheets="@../css/login-view.css" text="CONTRASEÑA" />
+                  <Button defaultButton="true" layoutX="176.0" layoutY="241.0" mnemonicParsing="false" onAction="#handleLogin" prefHeight="18.0" prefWidth="152.0" styleClass="label" stylesheets="@../css/login-view.css" text="INICIAR SESIÓN" />
+                  <Circle fill="DODGERBLUE" layoutX="126.0" layoutY="142.0" radius="100.0" stroke="BLACK" strokeType="INSIDE" styleClass="mi-circulo" />
+                  <ImageView fitHeight="129.0" fitWidth="145.0" layoutX="62.0" layoutY="83.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/image-001.png" />
+                     </image>
+                  </ImageView>
+                  <Button layoutX="354.0" layoutY="241.0" mnemonicParsing="false" prefHeight="0.0" prefWidth="152.0" text="REGISTRARSE" />
+               </children>
+               <styleClass>
+                  <String fx:value="pane" />
+                  <String fx:value="label" />
+                  <String fx:value="pane" />
+                  <String fx:value="root" />
+               </styleClass>
+            </Pane>
+         </children>
+         <styleClass>
+            <String fx:value="mainFxmlClass" />
+            <String fx:value="root" />
+         </styleClass>
+      </GridPane>
+   </children>
+</AnchorPane>
