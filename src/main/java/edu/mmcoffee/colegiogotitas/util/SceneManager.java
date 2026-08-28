@@ -9,7 +9,7 @@ import javafx.stage.Stage;
 import main.java.edu.mmcoffee.colegiogotitas.controller.DashboardController;
 import main.java.edu.mmcoffee.colegiogotitas.controller.LoginController;
 import main.java.edu.mmcoffee.colegiogotitas.repository.AuthRepository;
-import main.java.edu.mmcoffee.colegiogotitas.repository.DashboardRepository;
+import main.java.edu.mmcoffee.colegiogotitas.repository.EstudianteRepository;
 import main.java.edu.mmcoffee.colegiogotitas.service.AuthService;
 import main.java.edu.mmcoffee.colegiogotitas.service.DashboardService;
 
@@ -48,26 +48,26 @@ public class SceneManager {
         primaryStage.show();
     }
 
-    public void showDashboard() throws Exception{
+    public void showDashboardView() throws Exception {
         FXMLLoader loader = new FXMLLoader(getClass().getResource(FXML_PATH + "dashboard-view.fxml"));
 
-        loader.setControllerFactory(
-                clazz -> {
-                    if (clazz == DashboardController.class) {
-                        DashboardRepository dashboardRepository = new DashboardRepository();
-                        DashboardService dashboardService = new DashboardService(dashboardRepository);
-                        return new DashboardController(dashboardService, this);
-                    }
-                    try {
-                        return clazz.getDeclaredConstructor().newInstance();
-                    } catch (Exception e) {
-                        throw new RuntimeException("ERROR: " + e.getMessage());
-                    }
-                }
+        loader.setControllerFactory(clazz -> {
+            if (clazz == DashboardController.class) {
+                EstudianteRepository dashboardRepository = new EstudianteRepository();
+                DashboardService dashboardService = new DashboardService(dashboardRepository);
+                return new DashboardController(dashboardService, this);
+            }
+
+            try {
+                return clazz.getDeclaredConstructor().newInstance();
+            } catch (Exception e) {
+                throw new RuntimeException("ERROR AL CREAR EL CONSTRUCTOR: " + e.getMessage());
+            }
+        }
         );
-        
+
         Parent root = loader.load();
-        Scene scene = new Scene(root, 600, 400);
+        Scene scene = new Scene(root);
         primaryStage.setScene(scene);
         primaryStage.centerOnScreen();
         primaryStage.show();

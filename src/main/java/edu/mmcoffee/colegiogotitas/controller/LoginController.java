@@ -40,7 +40,7 @@ public class LoginController implements Initializable {
             try{
                 LoginResponse responseService = authService.login(new LoginRequest(txtFieldEmail.getText(), txtFieldPass.getText()));
                 LoginResponse userLogged = new LoginResponse(responseService.getNombre(), responseService.getApellido()); 
-                sceneManager.showDashboard();
+                sceneManager.showDashboardView();
             }catch(RuntimeException e){
                 e.printStackTrace();
                 sceneManager.showInfoAlert("DATOS INCORRECTOS", "REVISA TU INFORMACION", "intenta de Nuevo", Alert.AlertType.INFORMATION);
